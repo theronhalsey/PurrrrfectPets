@@ -2,7 +2,7 @@
 // =============================================================
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require("path");
+const $ = require("jquery");
 
 // Sets up the Express App
 // =============================================================
@@ -13,14 +13,14 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Import slides logic
-const petSlides = require("./app/data/petsSlides")
+// Static directory to be served
+app.use(express.static("app/public"));
 
 // ROUTER
-require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes")(app);
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
 // LISTENER
-app.listen(PORT, function() {
-    console.log("App listening on PORT: " + PORT);
-  });
+app.listen(PORT, function () {
+  console.log("App listening on PORT: " + PORT);
+});

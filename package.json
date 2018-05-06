@@ -1,0 +1,27 @@
+{
+  "name": "purrrrfectpets",
+  "version": "1.0.0",
+  "description": "Get matched with your perfect pet!",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theronhalsey/PurrrrfectPets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theronhalsey/PurrrrfectPets/issues"
+  },
+  "homepage": "https://github.com/theronhalsey/PurrrrfectPets#readme"
+}
