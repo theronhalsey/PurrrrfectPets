@@ -9,13 +9,10 @@ function getPets() {
         request("http://api.petfinder.com/pet.getRandom?key=ed58377893bb1ab4b2a658c376a78939&output=basic&format=json", function (error, response, body) {
 
             if (!error && response.statusCode === 200) {
-                console.log(JSON.parse(body));
                 pets.push(JSON.parse(body))
-                console.log(pets)
             }
         })
     }
-    
 }
 
 getPets();
