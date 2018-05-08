@@ -2,7 +2,7 @@ var request = require("request");
 
 let pets = [];
 
-function getPets() {
+(function () {
 
     for (i = 0; i < 10; i++) {
 
@@ -13,8 +13,6 @@ function getPets() {
             }
         })
     }
-}
-
-getPets();
+})()
 
 module.exports = pets;

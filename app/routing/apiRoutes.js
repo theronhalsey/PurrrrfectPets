@@ -9,13 +9,12 @@ module.exports = function (app) {
         return res.json(pets);
     });
 
-    app.post("/api/pets", function (req, res) {
-
+    app.post("/api/survey", function (req, res) {
+        console.log(req.body)
 
     });
 
     app.get("/api/petscores", function (req, res) {
-        petScores = scorePets()
-        return res.petScores
+
     });
 }

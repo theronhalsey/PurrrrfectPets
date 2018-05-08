@@ -1,7 +1,6 @@
 // Dependencies
 const pets = require("./getPets.js");
 
-
 let scoredPets = [];
 
 function ScoredPet(name, photo, description, scores) {
@@ -9,7 +8,7 @@ function ScoredPet(name, photo, description, scores) {
     this.photo = photo;
     this.description = description;
     this.scores = scores;
-}
+};
 
 const scorePets = function () {
 
@@ -31,12 +30,12 @@ const scorePets = function () {
         })();
 
         (function () {
-            if (pets[i].petfinder.pet.age.$t === "Young") {
+            if (pets[i].petfinder.pet.age.$t === "Baby") {
                 scores.push(1);
-            } else if (pets[i].petfinder.pet.age.$t === "Adult") {
-                scores.push(5)
-            } else {
+            } else if (pets[i].petfinder.pet.age.$t === "Young") {
                 scores.push(3)
+            } else {
+                scores.push(5)
             }
         })();
 
@@ -117,9 +116,10 @@ const scorePets = function () {
 
         let newPet = new ScoredPet(name, photo, description, scores)
         scoredPets.push(newPet);
-        console.log(scoredPets)
+
 
     }
+    console.log(scoredPets)
 }
 
 module.exports = scorePets;

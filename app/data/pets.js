@@ -1,4 +1,4 @@
-let pets = [
+/* let pets = [
     {
     "@encoding": "iso-8859-1",
     "@version": "1.0",
@@ -2005,7 +2005,7 @@ function ScoredPet(name, photo, description, scores) {
     this.scores = scores;
 }
 
-const scorePets = function () {
+const scorePets = function (pets) {
     console.log(pets);
     for (i = 0; i < pets.length; i++) {
 
@@ -2115,3 +2115,44 @@ const scorePets = function () {
 
     }
 }
+
+scorePets(pets); */
+
+var petScores = [
+    {
+        scores: [5, 3, 1, 3, 1, 3, 5, 5, 5, 5]
+    },
+    {
+        scores: [1, 5, 1, 3, 5, 3, 3, 3, 3, 5]
+    },
+    {
+        scores: [1, 3, 5, 1, 5, 1, 3, 3, 3, 5]
+    },
+];
+
+var userScores = ['2', '3', '5', '3', '1', '4', '5', '2', '1', '5'];
+var userNumbers = userScores.map(Number);
+let absValSums = [];
+(function () {
+
+    for (i = 0; i < petScores.length; i++) {
+
+        for (j = 0; j < userNumbers.length; j++) {
+            let absVals = [];
+
+            var getAbsVals = function () {
+                absVals.push(Math.abs(userNumbers[j] - petScores[i].scores[j]))
+            }
+            var getSum = function (total, num) {
+                return total + num;
+
+                (function () {
+                    absValSums.push(absVals.reduce(getSum));
+                    console.log(absVals)
+                })();
+            }
+        }
+    }
+})();
+
+console.log(absValSums)
