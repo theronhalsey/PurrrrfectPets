@@ -24,7 +24,7 @@ module.exports = function (app) {
 
                 let name = pets[i].petfinder.pet.name.$t;
                 let photo = pets[i].petfinder.pet.media.photos.photo[3].$t;
-                let description = pets[i].petfinder.pet.description;
+                let description = pets[i].petfinder.pet.description.$t;
                 let scores = [];
 
                 (function () {
