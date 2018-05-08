@@ -1,4 +1,4 @@
-/* let pets = [
+let pets = [
     {
     "@encoding": "iso-8859-1",
     "@version": "1.0",
@@ -2116,9 +2116,9 @@ const scorePets = function (pets) {
     }
 }
 
-scorePets(pets); */
+scorePets(pets);
 
-var petScores = [
+/* var scoredPets = [
     {
         scores: [5, 3, 1, 3, 1, 3, 5, 5, 5, 5]
     },
@@ -2128,31 +2128,54 @@ var petScores = [
     {
         scores: [1, 3, 5, 1, 5, 1, 3, 3, 3, 5]
     },
-];
+]; */
 
 var userScores = ['2', '3', '5', '3', '1', '4', '5', '2', '1', '5'];
 var userNumbers = userScores.map(Number);
-let absValSums = [];
+
+let bestPet = " ";
+
 (function () {
 
-    for (i = 0; i < petScores.length; i++) {
+    let absVals = [];
+    let absValsArray = [];
+    let absValSums = [];
 
-        for (j = 0; j < userNumbers.length; j++) {
-            let absVals = [];
-
-            var getAbsVals = function () {
-                absVals.push(Math.abs(userNumbers[j] - petScores[i].scores[j]))
+    for (i = 0; i <= scoredPets.length; i++) {
+        if (i < scoredPets.length) {
+            absVals = [];
+            for (j = 0; j <= userNumbers.length; j++) {
+                if (j < userNumbers.length) {
+                    (function () {
+                        absVals.push(Math.abs(userNumbers[j] - scoredPets[i].scores[j]))
+                    })();
+                } else {
+                    absValsArray.push(absVals)
+                    console.log(absValsArray)
+                }
             }
-            var getSum = function (total, num) {
-                return total + num;
+        } else {
+            for (k = 0; k <= absValsArray.length; k++) {
+                if (k < absValsArray.length) {
+                    absValSums.push(absValsArray[k].reduce(function (acc, val) { return acc + val; }));
+                    console.log(absValSums)
+                } else {
+                    Array.min = function (array) {
+                        return Math.min.apply(Math, array);
+                    };
+                    var bestPetVal = Array.min(absValSums);
+                    console.log(bestPetVal)
+                    var bestPetIndex = absValSums.indexOf(bestPetVal);
+                    console.log(bestPetIndex);
+                    bestPet = scoredPets[bestPetIndex];
 
-                (function () {
-                    absValSums.push(absVals.reduce(getSum));
-                    console.log(absVals)
-                })();
+
+                }
             }
         }
     }
+
 })();
 
-console.log(absValSums)
+console.log("Your perfect pet is " + bestPet.name)
+

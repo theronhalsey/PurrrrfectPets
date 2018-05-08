@@ -270,7 +270,7 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary submit">
+      <button type="submit" class="btn btn-primary submit" data-toggle="modal" data-target="#purfectPetModal">
         <i class="far fa-life-ring"></i> Find My Purrrfect Pet!</button>
 
     </form>
@@ -290,6 +290,26 @@
 
   </footer>
 
+  <div class="modal fade" id="purfectPetModal" tabindex="-1" role="dialog" aria-labelledby="purfectPetName" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="purfectPetName"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src=" " id="petImage">
+          <p id ="petDescription"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="seePet">See your Purrrfect Pet?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>
@@ -308,11 +328,22 @@
     }
 
     $.post("/api/survey", userScores,
+      function (data) { });
+  });
+
+  $("#seePet").on("click", function (event) {
+    event.preventDefault();
+
+    $.get("/api/survey",
       function (data) {
-
-
+        $("#purfectPetName").text(data.name);
+        $('#petImage').attr({
+          src: data.photo,
+          width: '300px',
+          height: 'auto'
+        })
+        $("#petDescription").text(data.description.$t);
       });
-
   });
 
 </script>
