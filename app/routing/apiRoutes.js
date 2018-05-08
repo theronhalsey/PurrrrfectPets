@@ -23,7 +23,7 @@ module.exports = function (app) {
             for (i = 0; i < pets.length; i++) {
 
                 let name = pets[i].petfinder.pet.name.$t;
-                let photo = pets[i].petfinder.pet.media.photos.photo[4].$t;
+                let photo = pets[i].petfinder.pet.media.photos.photo[3].$t;
                 let description = pets[i].petfinder.pet.description;
                 let scores = [];
 
