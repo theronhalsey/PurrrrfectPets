@@ -1,8 +1,9 @@
-// Dependencies
-// =============================================================
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 
+// Connect to the Mongo DB
+mongoose.connect("mongodb://localhost/mews_db");
 // Sets up the Express App
 // =============================================================
 const app = express();
