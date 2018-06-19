@@ -1,31 +1,27 @@
 {
-  "name": "mews",
+  "name": "purrrrfectpets",
   "version": "1.0.0",
-  "description": "News about cats!",
+  "description": "Get matched with your perfect pet!",
   "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "path": "^0.12.7",
+    "request": "^2.85.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theronhalsey/mews.git"
+    "url": "git+https://github.com/theronhalsey/PurrrrfectPets.git"
   },
-  "keywords": [
-    "cats",
-    "news"
-  ],
-  "author": "Theron Halsey",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/theronhalsey/mews/issues"
+    "url": "https://github.com/theronhalsey/PurrrrfectPets/issues"
   },
-  "homepage": "https://github.com/theronhalsey/mews#readme",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.3",
-    "cheerio": "^1.0.0-rc.2",
-    "express": "^4.16.3",
-    "mongoose": "^5.1.5"
-  }
+  "homepage": "https://github.com/theronhalsey/PurrrrfectPets#readme"
 }
